@@ -1,11 +1,11 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 640,
+    "exp": 311,
     "placeList": [
         {
             "name": "수련장",
-            "amount": 9,
-            "price": 1586,
+            "amount": 10,
+            "price": 2161,
             "ePs": 1
         },
         {
