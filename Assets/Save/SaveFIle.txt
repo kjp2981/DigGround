@@ -1,17 +1,17 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 311,
+    "exp": 2076,
     "placeList": [
         {
             "name": "수련장",
-            "amount": 10,
-            "price": 2161,
+            "amount": 16,
+            "price": 12538,
             "ePs": 1
         },
         {
             "name": "던전",
-            "amount": 3,
-            "price": 2212,
+            "amount": 10,
+            "price": 14565,
             "ePs": 8
         }
     ]
