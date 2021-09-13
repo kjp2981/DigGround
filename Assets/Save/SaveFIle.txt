@@ -1,6 +1,7 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 2076,
+    "exp": 43030,
+    "clickExp": 0,
     "placeList": [
         {
             "name": "수련장",

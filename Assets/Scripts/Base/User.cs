@@ -5,5 +5,6 @@ public class User
 {
     public string nickname;
     public long exp;
+    public long clickExp;
     public List<Place> placeList = new List<Place>();
 }

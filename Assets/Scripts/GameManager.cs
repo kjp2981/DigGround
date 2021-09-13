@@ -14,8 +14,12 @@ public class GameManager : MonoSingleton<GameManager>
     private readonly string SAVE_FILENAME = "/SaveFIle.txt";
 
     public UIManager uiManager { get; private set; }
+
+    public PoolManager poolManager = null;
     void Awake()
     {
+        //poolManager = FindObjectOfType<PoolManager>();
+
         SAVE_PATH = Application.dataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
         {
