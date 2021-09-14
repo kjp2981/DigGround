@@ -1,13 +1,13 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 0,
-    "clickExp": 0,
+    "exp": 13,
+    "clickExp": 1,
     "placeList": [
         {
-            "name": "수련장",
+            "name": "훈련장",
             "placeNumber": 0,
             "amount": 0,
-            "price": 10,
+            "price": 100,
             "ePs": 1
         },
         {
@@ -15,7 +15,7 @@
             "placeNumber": 1,
             "amount": 0,
             "price": 1000,
-            "ePs": 8
+            "ePs": 10
         }
     ]
 }

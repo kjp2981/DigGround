@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UpgradePanel upgradePanelTemplate = null;
     [SerializeField]
-    private GameObject amountText = null;
+    private EnergyText energyTextTemplate = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
@@ -40,8 +40,21 @@ public class UIManager : MonoBehaviour
 
     public void OnClickerSword()
     {
-        GameManager.Instance.CurrentUser.exp++;
+        GameManager.Instance.CurrentUser.exp += GameManager.Instance.CurrentUser.clickExp;
         swordAnimator.Play("Click");
+
+        EnergyText newText = null;
+        if(GameManager.Instance.Pool.childCount > 0)
+        {
+            newText = GameManager.Instance.Pool.GetChild(0).GetComponent<EnergyText>();
+            newText.transform.SetParent(GameManager.Instance.Pool.parent);
+        }
+        else
+        {
+            newText = Instantiate(energyTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EnergyText>(); 
+        }
+        newText.gameObject.SetActive(true);
+        newText.Show(GameManager.Instance.CurrentUser.clickExp);
         UpdateExpPanel();
     }
     public void UpdateExpPanel()

@@ -13,15 +13,21 @@ public class UpgradePanel : MonoBehaviour
     private Text amountText = null;
     [SerializeField]
     private Button purchaseButton = null;
+    [SerializeField]
+    private Sprite[] placeSprite = null;
 
     private Place place = null;
-
-    public void SetValue(Place place)
+    public void UpdateUI()
     {
+        placeImage.sprite = placeSprite[place.placeNumber];
         placeNameText.text = place.name;
         priceText.text = string.Format("{0} EXP", place.price);
         amountText.text = string.Format("{0}", place.amount);
+    }
+    public void SetValue(Place place)
+    {
         this.place = place;
+        UpdateUI();
     }
     
     public void OnClickPurchase()
@@ -31,8 +37,7 @@ public class UpgradePanel : MonoBehaviour
         Place placeInList = GameManager.Instance.CurrentUser.placeList.Find((x) => x == place);
         placeInList.amount++;
         place.price = (long)(Mathf.Pow(place.amount,2)+place.price*1.3);
-        amountText.text = string.Format("{0}", placeInList.amount);
-        priceText.text = string.Format("{0} EXP", placeInList.price);
+        UpdateUI();
         GameManager.Instance.uiManager.UpdateExpPanel();
     }
 }

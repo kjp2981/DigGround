@@ -7,6 +7,10 @@ public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
     private User user = null;
+    [SerializeField]
+    private Transform textPool = null;
+
+    public Transform Pool { get { return textPool; } }
 
     public User CurrentUser { get { return user; } }
 
