@@ -15,11 +15,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public UIManager uiManager { get; private set; }
 
-    public PoolManager poolManager = null;
     void Awake()
     {
-        //poolManager = FindObjectOfType<PoolManager>();
-
         SAVE_PATH = Application.dataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
         {

@@ -15,7 +15,6 @@ public class MonsterMove : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);

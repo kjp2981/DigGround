@@ -42,30 +42,10 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.CurrentUser.exp++;
         swordAnimator.Play("Click");
-        //Pooling();
         UpdateExpPanel();
     }
     public void UpdateExpPanel()
     {
         expText.text = string.Format("{0} EXP", GameManager.Instance.CurrentUser.exp);
     }
-
-    //private GameObject Pooling()
-    //{
-    //    GameObject result = null;
-    //    if (GameManager.Instance.poolManager.transform.childCount < 1)
-    //    {
-    //        result = Instantiate(amountText, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-    //        result.transform.SetParent(GameObject.Find("Canvas").transform, false);
-    //        result.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        result = GameManager.Instance.poolManager.transform.GetChild(0).gameObject;
-    //        result.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //        result.transform.SetParent(GameObject.Find("Canvas").transform, false);
-    //        result.SetActive(true);
-    //    }
-    //    return result;
-    //}
 }
