@@ -1,17 +1,17 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 13,
+    "exp": 11,
     "clickExp": 1,
     "placeList": [
         {
-            "name": "훈련장",
+            "name": "지하던전 1층",
             "placeNumber": 0,
             "amount": 0,
             "price": 100,
             "ePs": 1
         },
         {
-            "name": "던전",
+            "name": "지하던전 2층",
             "placeNumber": 1,
             "amount": 0,
             "price": 1000,
