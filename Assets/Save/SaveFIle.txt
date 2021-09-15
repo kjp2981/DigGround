@@ -1,6 +1,6 @@
 ﻿{
     "nickname": "jaepill",
-    "exp": 147,
+    "exp": 222,
     "clickExp": 1,
     "placeList": [
         {
@@ -8,7 +8,7 @@
             "placeNumber": 0,
             "amount": 1,
             "price": 131,
-            "ePs": 1
+            "ePs": 2
         },
         {
             "name": "지하던전 1층",
