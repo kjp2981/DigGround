@@ -1,0 +1,42 @@
+﻿{
+    "nickname": "jaepill",
+    "exp": 529,
+    "clickExp": 1,
+    "placeList": [
+        {
+            "name": "지하던전 입구",
+            "placeNumber": 0,
+            "amount": 7,
+            "price": 842,
+            "ePs": 2
+        },
+        {
+            "name": "지하던전 1층",
+            "placeNumber": 1,
+            "amount": 2,
+            "price": 1695,
+            "ePs": 10
+        },
+        {
+            "name": "지하던전 2층",
+            "placeNumber": 2,
+            "amount": 0,
+            "price": 2500,
+            "ePs": 18
+        },
+        {
+            "name": "지하던전 3층",
+            "placeNumber": 3,
+            "amount": 0,
+            "price": 4000,
+            "ePs": 23
+        },
+        {
+            "name": "지하던전 4층",
+            "placeNumber": 4,
+            "amount": 0,
+            "price": 1800,
+            "ePs": 30
+        }
+    ]
+}
