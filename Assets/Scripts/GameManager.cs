@@ -42,9 +42,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach(Place place in user.placeList)
         {
-            user.iron += place.ePs * place.amount;
+            user.money += place.ePs * place.amount;
         }
-        uiManager.UpdateExpPanel();
+        uiManager.UpdateMoneyPanel();
     }
 
     private void LoadFromJson()

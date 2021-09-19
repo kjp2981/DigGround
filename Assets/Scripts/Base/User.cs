@@ -5,17 +5,17 @@ using System.Collections.Generic;
 public class User
 {
     public string nickname;
-    public long iron;
-    public float clickiron
+    public long money;
+    public float clickMoney
     {
         get
         {
-            return (long)(1f > Math.Ceiling(TotalIron * 0.05f) ? 1f : Math.Ceiling(TotalIron * 0.05f));
+            return (long)(1f > Math.Ceiling(TotalMoney * 0.05f) ? 1f : Math.Ceiling(TotalMoney * 0.05f));
         }
     }
     public List<Place> placeList = new List<Place>();
 
-    public float TotalIron
+    public float TotalMoney
     {
         get
         {

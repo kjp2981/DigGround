@@ -21,7 +21,7 @@ public class UpgradePanel : MonoBehaviour
     {
         placeImage.sprite = placeSprite[place.placeNumber];
         placeNameText.text = place.name;
-        priceText.text = string.Format("{0} IRON", place.price);
+        priceText.text = string.Format("{0} MONEY", place.price);
         amountText.text = string.Format("{0}", place.amount);
     }
     public void SetValue(Place place)
@@ -32,12 +32,12 @@ public class UpgradePanel : MonoBehaviour
     
     public void OnClickPurchase()
     {
-        if (GameManager.Instance.CurrentUser.iron < place.price) return;
-        GameManager.Instance.CurrentUser.iron -= place.price;
+        if (GameManager.Instance.CurrentUser.money < place.price) return;
+        GameManager.Instance.CurrentUser.money -= place.price;
         Place placeInList = GameManager.Instance.CurrentUser.placeList.Find((x) => x == place);
         placeInList.amount++;
         place.price = (long)(Mathf.Pow(place.amount,2)+place.price*1.3);
         UpdateUI();
-        GameManager.Instance.uiManager.UpdateExpPanel();
+        GameManager.Instance.uiManager.UpdateMoneyPanel();
     }
 }

@@ -1,6 +1,6 @@
 ﻿{
     "nickname": "jaepill",
-    "iron": 655,
+    "money": 580,
     "placeList": [
         {
             "name": "삽",

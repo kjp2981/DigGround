@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
-        UpdateExpPanel();
+        UpdateMoneyPanel();
         CreatePanels();
     }
 
@@ -42,9 +42,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void OnClickerIron()
+    public void OnCick()
     {
-        GameManager.Instance.CurrentUser.iron += (long)(GameManager.Instance.CurrentUser.clickiron);
+        GameManager.Instance.CurrentUser.money += (long)(GameManager.Instance.CurrentUser.clickMoney);
         animator.Play("Click");
         ParticlePool();
         StartCoroutine(cameraShake.Shake(0.05f, 0.1f));
@@ -60,12 +60,12 @@ public class UIManager : MonoBehaviour
             newText = Instantiate(energyTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EnergyText>(); 
         }
         newText.gameObject.SetActive(true);
-        newText.Show((long)(GameManager.Instance.CurrentUser.clickiron));
-        UpdateExpPanel();
+        newText.Show((long)(GameManager.Instance.CurrentUser.clickMoney));
+        UpdateMoneyPanel();
     }
-    public void UpdateExpPanel()
+    public void UpdateMoneyPanel()
     {
-        ironText.text = string.Format("{0} IRON", GameManager.Instance.CurrentUser.iron);
+        ironText.text = string.Format("{0} MONEY", GameManager.Instance.CurrentUser.money);
     }
 
     private void ParticlePool()
