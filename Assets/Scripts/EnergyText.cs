@@ -9,7 +9,7 @@ public class EnergyText : MonoBehaviour
 {
     private Text energyText = null;
 
-    public void Show(int number)
+    public void Show(long number)
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
@@ -17,7 +17,7 @@ public class EnergyText : MonoBehaviour
         energyText.text = string.Format("+{0}", number);
         energyText.DOFade(0f, 0.5f).OnComplete(() => Despawn());
         RectTransform rectTransform = GetComponent<RectTransform>();
-        float targetPositionY = rectTransform.anchoredPosition.y + 100f;
+        float targetPositionY = rectTransform.anchoredPosition.y + 150f;
         rectTransform.DOAnchorPosY(targetPositionY, 0.5f);
     }
     

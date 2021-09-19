@@ -6,18 +6,22 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private Text expText = null;
+    private Text ironText = null;
     [SerializeField]
-    private Animator swordAnimator = null;
+    private Animator animator = null;
     [SerializeField]
     private UpgradePanel upgradePanelTemplate = null;
     [SerializeField]
     private EnergyText energyTextTemplate = null;
+    [SerializeField]
+    private ParticleCallBack particle = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
+    private CameraShake cameraShake = null;
     void Start()
     {
+        cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         UpdateExpPanel();
         CreatePanels();
     }
@@ -38,10 +42,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void OnClickerSword()
+    public void OnClickerIron()
     {
-        GameManager.Instance.CurrentUser.exp += GameManager.Instance.CurrentUser.clickExp;
-        swordAnimator.Play("Click");
+        GameManager.Instance.CurrentUser.iron += (long)(GameManager.Instance.CurrentUser.clickiron);
+        animator.Play("Click");
+        ParticlePool();
+        StartCoroutine(cameraShake.Shake(0.05f, 0.1f));
 
         EnergyText newText = null;
         if(GameManager.Instance.Pool.childCount > 0)
@@ -54,11 +60,26 @@ public class UIManager : MonoBehaviour
             newText = Instantiate(energyTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EnergyText>(); 
         }
         newText.gameObject.SetActive(true);
-        newText.Show(GameManager.Instance.CurrentUser.clickExp);
+        newText.Show((long)(GameManager.Instance.CurrentUser.clickiron));
         UpdateExpPanel();
     }
     public void UpdateExpPanel()
     {
-        expText.text = string.Format("{0} EXP", GameManager.Instance.CurrentUser.exp);
+        ironText.text = string.Format("{0} IRON", GameManager.Instance.CurrentUser.iron);
+    }
+
+    private void ParticlePool()
+    {
+        ParticleCallBack newObject = null;
+        if (GameManager.Instance.Particle.childCount > 0)
+        {
+            newObject = GameManager.Instance.Particle.GetChild(0).GetComponent<ParticleCallBack>();
+            newObject.transform.SetParent(GameManager.Instance.Pool.parent);
+        }
+        else
+        {
+            newObject = Instantiate(particle, GameManager.Instance.Particle.parent).GetComponent<ParticleCallBack>();
+        }
+        newObject.gameObject.SetActive(true);
     }
 }

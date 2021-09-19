@@ -9,8 +9,12 @@ public class GameManager : MonoSingleton<GameManager>
     private User user = null;
     [SerializeField]
     private Transform textPool = null;
+    [SerializeField]
+    private Transform particlePool = null;
 
     public Transform Pool { get { return textPool; } }
+
+    public Transform Particle { get { return particlePool; } }
 
     public User CurrentUser { get { return user; } }
 
@@ -38,7 +42,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach(Place place in user.placeList)
         {
-            user.exp += place.ePs * place.amount;
+            user.iron += place.ePs * place.amount;
         }
         uiManager.UpdateExpPanel();
     }
