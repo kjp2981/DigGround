@@ -6521,7 +6521,7 @@ GameObject:
   - component: {fileID: 990430469}
   - component: {fileID: 990430468}
   m_Layer: 5
-  m_Name: ExPanel
+  m_Name: MoneyPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6672,7 +6672,7 @@ GameObject:
   - component: {fileID: 1159283805}
   - component: {fileID: 1159283804}
   m_Layer: 5
-  m_Name: Exp
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7359,7 +7359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89562a0d301560e44866394cb9b0636a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ironText: {fileID: 1159283804}
+  moneyText: {fileID: 1159283804}
   animator: {fileID: 1192580156}
   upgradePanelTemplate: {fileID: 1316168862}
   energyTextTemplate: {fileID: 963247512}

@@ -35,16 +35,20 @@ public class GameManager : MonoSingleton<GameManager>
         uiManager = GetComponent<UIManager>();
 
         InvokeRepeating("SaveToJson", 1f, 60f);
-        InvokeRepeating("EarnExPerSecond", 0f, 1f);
+        InvokeRepeating("EarnMoneyPerSecond", 0f, 1f);
     }
 
-    public void EarnExPerSecond()
+    public void EarnMoneyPerSecond()
     {
+        int count = 0;
         foreach(Place place in user.placeList)
         {
             user.money += place.ePs * place.amount;
+            if(place.amount != 0)
+                count++;
         }
-        uiManager.UpdateMoneyPanel();
+        if(count != 0)
+            uiManager.UpdateMoneyPanel();
     }
 
     private void LoadFromJson()

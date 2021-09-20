@@ -10,19 +10,20 @@ public class User
     {
         get
         {
-            return (long)(1f > Math.Ceiling(TotalMoney * 0.05f) ? 1f : Math.Ceiling(TotalMoney * 0.05f));
+            //return (long)(1f > Math.Round(TotalMoney * 0.01f) ? 1f : Math.Round(TotalMoney * 0.05f));
+            return (long)(1f > Math.Round(Math.Pow(TotalAmount, 0.5f)-1) ? 1f : Math.Round(Math.Pow(TotalAmount, 0.5f) - 1));
         }
     }
     public List<Place> placeList = new List<Place>();
 
-    public float TotalMoney
+    public float TotalAmount
     {
         get
         {
             float result = 0f;
             foreach(Place place in placeList)
             {
-                result += place.ePs;
+                result += place.amount;
             }
             return result;
         }

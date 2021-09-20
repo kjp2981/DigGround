@@ -21,7 +21,7 @@ public class UpgradePanel : MonoBehaviour
     {
         placeImage.sprite = placeSprite[place.placeNumber];
         placeNameText.text = place.name;
-        priceText.text = string.Format("{0} MONEY", place.price);
+        priceText.text = string.Format("{0}", place.price);
         amountText.text = string.Format("{0}", place.amount);
     }
     public void SetValue(Place place)

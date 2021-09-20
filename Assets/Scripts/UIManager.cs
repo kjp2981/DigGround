@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private Text ironText = null;
+    private Text moneyText = null;
     [SerializeField]
     private Animator animator = null;
     [SerializeField]
@@ -65,7 +66,8 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateMoneyPanel()
     {
-        ironText.text = string.Format("{0} MONEY", GameManager.Instance.CurrentUser.money);
+        moneyText.text = string.Format("{0} MONEY", GameManager.Instance.CurrentUser.money);
+        moneyText.transform.DOScale(1.2f, 0.1f).OnComplete(() => moneyText.transform.DOScale(1f, 0.1f));
     }
 
     private void ParticlePool()

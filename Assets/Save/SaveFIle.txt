@@ -1,19 +1,19 @@
 ﻿{
     "nickname": "jaepill",
-    "money": 580,
+    "money": 227,
     "placeList": [
         {
             "name": "삽",
             "placeNumber": 0,
-            "amount": 0,
-            "price": 100,
+            "amount": 6,
+            "price": 610,
             "ePs": 2
         },
         {
             "name": "곡갱",
             "placeNumber": 1,
-            "amount": 0,
-            "price": 1000,
+            "amount": 1,
+            "price": 1301,
             "ePs": 10
         },
         {
