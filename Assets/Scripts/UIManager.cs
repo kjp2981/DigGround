@@ -16,15 +16,21 @@ public class UIManager : MonoBehaviour
     private EnergyText energyTextTemplate = null;
     [SerializeField]
     private ParticleCallBack particle = null;
+    [SerializeField]
+    private CartMove cart = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
     private CameraShake cameraShake = null;
+
+    private PanelMove panelMove = null;
     void Start()
     {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        panelMove = GetComponent<PanelMove>();
         UpdateMoneyPanel();
         CreatePanels();
+        StartCoroutine(CartCreate());
     }
 
     
@@ -49,19 +55,23 @@ public class UIManager : MonoBehaviour
         animator.Play("Click");
         ParticlePool();
         StartCoroutine(cameraShake.Shake(0.05f, 0.1f));
+        textPool((long)(GameManager.Instance.CurrentUser.clickMoney));
+    }
 
+    public void textPool(long number)
+    {
         EnergyText newText = null;
-        if(GameManager.Instance.Pool.childCount > 0)
+        if (GameManager.Instance.Pool.childCount > 0)
         {
             newText = GameManager.Instance.Pool.GetChild(0).GetComponent<EnergyText>();
             newText.transform.SetParent(GameManager.Instance.Pool.parent);
         }
         else
         {
-            newText = Instantiate(energyTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EnergyText>(); 
+            newText = Instantiate(energyTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EnergyText>();
         }
         newText.gameObject.SetActive(true);
-        newText.Show((long)(GameManager.Instance.CurrentUser.clickMoney));
+        newText.Show((long)(number));
         UpdateMoneyPanel();
     }
     public void UpdateMoneyPanel()
@@ -83,5 +93,28 @@ public class UIManager : MonoBehaviour
             newObject = Instantiate(particle, GameManager.Instance.Particle.parent).GetComponent<ParticleCallBack>();
         }
         newObject.gameObject.SetActive(true);
+    }
+
+    private IEnumerator CartCreate()
+    {
+        CartMove newCart = null;
+        float RandomDelay = 0f;
+        yield return new WaitForSeconds(20f);
+        while(true)
+        {
+            if (panelMove.isClick == false) continue;
+            RandomDelay = Random.Range(10f, 20f);
+            if (GameManager.Instance.CartPool.childCount > 0)
+            {
+                newCart = GameManager.Instance.CartPool.GetChild(0).GetComponent<CartMove>();
+                newCart.transform.SetParent(GameManager.Instance.CartPool.parent);
+            }
+            else
+            {
+                newCart = Instantiate(cart, GameManager.Instance.CartPool.parent).GetComponent<CartMove>();
+            }
+            newCart.gameObject.SetActive(true);
+            yield return new WaitForSeconds(RandomDelay);
+        }
     }
 }

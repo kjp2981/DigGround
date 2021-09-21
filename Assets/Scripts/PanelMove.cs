@@ -8,7 +8,7 @@ public class PanelMove : MonoBehaviour
     [SerializeField]
     private GameObject panel = null;
     
-    private bool isClick = true;
+    public bool isClick = true;
 
     public void OnClick()
     {

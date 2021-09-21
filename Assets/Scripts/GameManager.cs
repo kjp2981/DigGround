@@ -11,10 +11,13 @@ public class GameManager : MonoSingleton<GameManager>
     private Transform textPool = null;
     [SerializeField]
     private Transform particlePool = null;
+    [SerializeField]
+    private Transform cartPool = null;
 
     public Transform Pool { get { return textPool; } }
 
     public Transform Particle { get { return particlePool; } }
+    public Transform CartPool { get { return cartPool; } }
 
     public User CurrentUser { get { return user; } }
 
