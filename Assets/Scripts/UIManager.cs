@@ -102,7 +102,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(20f);
         while(true)
         {
-            if (panelMove.isClick == false) continue;
+            //if (panelMove.isClick == false) continue;
             RandomDelay = Random.Range(10f, 20f);
             if (GameManager.Instance.CartPool.childCount > 0)
             {
@@ -115,6 +115,7 @@ public class UIManager : MonoBehaviour
             }
             newCart.gameObject.SetActive(true);
             yield return new WaitForSeconds(RandomDelay);
+            InfiniteLoopDetector.Run();
         }
     }
 }

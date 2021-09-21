@@ -16,6 +16,8 @@ public class CartMove : MonoBehaviour
     {
         transform.DOMoveX(-1.5f, 2);
         yield return new WaitForSeconds(5f);
+        transform.DOMoveX(-5f, 2);
+        gameObject.SetActive(false);
     }
 
     public void CartClick()
