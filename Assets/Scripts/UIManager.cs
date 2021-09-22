@@ -87,10 +87,12 @@ public class UIManager : MonoBehaviour
         {
             newObject = GameManager.Instance.Particle.GetChild(0).GetComponent<ParticleCallBack>();
             newObject.transform.SetParent(GameManager.Instance.Pool.parent);
+            newObject.transform.SetSiblingIndex(3);
         }
         else
         {
             newObject = Instantiate(particle, GameManager.Instance.Particle.parent).GetComponent<ParticleCallBack>();
+            newObject.transform.SetSiblingIndex(3);
         }
         newObject.gameObject.SetActive(true);
     }
@@ -102,16 +104,17 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(20f);
         while(true)
         {
-            //if (panelMove.isClick == false) continue;
             RandomDelay = Random.Range(10f, 20f);
             if (GameManager.Instance.CartPool.childCount > 0)
             {
-                newCart = GameManager.Instance.CartPool.GetChild(0).GetComponent<CartMove>();
+                newCart = GameManager.Instance.CartPool.GetChild(0).gameObject.AddComponent<CartMove>();
                 newCart.transform.SetParent(GameManager.Instance.CartPool.parent);
+                newCart.transform.SetSiblingIndex(10);
             }
             else
             {
                 newCart = Instantiate(cart, GameManager.Instance.CartPool.parent).GetComponent<CartMove>();
+                newCart.transform.SetSiblingIndex(10);
             }
             newCart.gameObject.SetActive(true);
             yield return new WaitForSeconds(RandomDelay);

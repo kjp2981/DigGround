@@ -1,40 +1,40 @@
 ﻿{
     "nickname": "jaepill",
-    "money": 13305,
+    "money": 138589,
     "placeList": [
         {
             "name": "삽",
             "placeNumber": 0,
-            "amount": 7,
-            "price": 842,
+            "amount": 17,
+            "price": 16588,
             "ePs": 2
         },
         {
             "name": "곡갱",
             "placeNumber": 1,
-            "amount": 2,
-            "price": 1695,
+            "amount": 3,
+            "price": 2212,
             "ePs": 10
         },
         {
             "name": "드릴",
             "placeNumber": 2,
-            "amount": 3,
-            "price": 5508,
+            "amount": 4,
+            "price": 7176,
             "ePs": 18
         },
         {
             "name": "대검",
             "placeNumber": 3,
-            "amount": 1,
-            "price": 5201,
+            "amount": 3,
+            "price": 8803,
             "ePs": 23
         },
         {
             "name": "프라이팬",
             "placeNumber": 4,
-            "amount": 1,
-            "price": 7801,
+            "amount": 7,
+            "price": 37863,
             "ePs": 30
         }
     ]
