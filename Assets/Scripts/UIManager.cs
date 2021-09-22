@@ -109,12 +109,12 @@ public class UIManager : MonoBehaviour
             {
                 newCart = GameManager.Instance.CartPool.GetChild(0).gameObject.AddComponent<CartMove>();
                 newCart.transform.SetParent(GameManager.Instance.CartPool.parent);
-                newCart.transform.SetSiblingIndex(10);
+                newCart.transform.SetSiblingIndex(11);
             }
             else
             {
                 newCart = Instantiate(cart, GameManager.Instance.CartPool.parent).GetComponent<CartMove>();
-                newCart.transform.SetSiblingIndex(10);
+                newCart.transform.SetSiblingIndex(11);
             }
             newCart.gameObject.SetActive(true);
             yield return new WaitForSeconds(RandomDelay);
