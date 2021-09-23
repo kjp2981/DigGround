@@ -7791,6 +7791,7 @@ MonoBehaviour:
   energyTextTemplate: {fileID: 963247512}
   particle: {fileID: 762820409}
   cart: {fileID: 1527325791}
+  quitButton: {fileID: 1581701005}
 --- !u!114 &1418025906
 MonoBehaviour:
   m_ObjectHideFlags: 0

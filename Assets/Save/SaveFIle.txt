@@ -1,6 +1,6 @@
 ﻿{
     "nickname": "jaepill",
-    "money": 227929,
+    "money": 79554,
     "placeList": [
         {
             "name": "삽",
@@ -26,15 +26,15 @@
         {
             "name": "대검",
             "placeNumber": 3,
-            "amount": 3,
-            "price": 8803,
+            "amount": 4,
+            "price": 11459,
             "ePs": 23
         },
         {
             "name": "프라이팬",
             "placeNumber": 4,
-            "amount": 7,
-            "price": 37863,
+            "amount": 11,
+            "price": 108665,
             "ePs": 30
         }
     ]

@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     private ParticleCallBack particle = null;
     [SerializeField]
     private CartMove cart = null;
+    [SerializeField]
+    private GameObject quitButton = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
@@ -113,12 +115,14 @@ public class UIManager : MonoBehaviour
             {
                 newCart = GameManager.Instance.CartPool.GetChild(0).gameObject.AddComponent<CartMove>();
                 newCart.transform.SetParent(GameManager.Instance.CartPool.parent);
-                newCart.transform.SetSiblingIndex(11);
+                int index = quitButton.transform.GetSiblingIndex();
+                newCart.transform.SetSiblingIndex(index - 1);
             }
             else
             {
                 newCart = Instantiate(cart, GameManager.Instance.CartPool.parent).GetComponent<CartMove>();
-                newCart.transform.SetSiblingIndex(11);
+                int index = quitButton.transform.GetSiblingIndex();
+                newCart.transform.SetSiblingIndex(index - 1);
             }
             newCart.gameObject.SetActive(true);
             yield return new WaitForSeconds(RandomDelay);
