@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour
     private GameObject backmenu = null;
     private void Start()
     {
+        Screen.SetResolution(1440, 2960, true);
         backmenu.SetActive(false);
     }
     private void Update()

@@ -28,7 +28,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Awake()
     {
-        SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
+        //SAVE_PATH = Application.dataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
         {
             Directory.CreateDirectory(SAVE_PATH);
@@ -72,7 +73,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void SaveToJson()
     {
-        SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
+        //SAVE_PATH = Application.dataPath + "/Save";
         if (user == null) return;
         string json = JsonUtility.ToJson(user, true);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME, json, System.Text.Encoding.UTF8);
