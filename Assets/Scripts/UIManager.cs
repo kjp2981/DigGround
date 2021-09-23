@@ -22,11 +22,13 @@ public class UIManager : MonoBehaviour
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
     private CameraShake cameraShake = null;
-
     private PanelMove panelMove = null;
-    void Start()
+
+    private AudioSource audioSource = null;
+    private void Start()
     {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        audioSource = GameObject.Find("Char").GetComponent<AudioSource>();
         panelMove = GetComponent<PanelMove>();
         UpdateMoneyPanel();
         CreatePanels();
@@ -53,6 +55,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.CurrentUser.money += (long)(GameManager.Instance.CurrentUser.clickMoney);
         animator.Play("Click");
+        audioSource.Play();
         ParticlePool();
         StartCoroutine(cameraShake.Shake(0.05f, 0.1f));
         textPool((long)(GameManager.Instance.CurrentUser.clickMoney));
@@ -82,6 +85,7 @@ public class UIManager : MonoBehaviour
 
     private void ParticlePool()
     {
+        if (panelMove.isClick == false) return;
         ParticleCallBack newObject = null;
         if (GameManager.Instance.Particle.childCount > 0)
         {

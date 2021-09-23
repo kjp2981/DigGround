@@ -1,6 +1,6 @@
 ﻿{
     "nickname": "jaepill",
-    "money": 184879,
+    "money": 227929,
     "placeList": [
         {
             "name": "삽",
