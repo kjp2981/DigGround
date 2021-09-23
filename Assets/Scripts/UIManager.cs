@@ -20,6 +20,10 @@ public class UIManager : MonoBehaviour
     private CartMove cart = null;
     [SerializeField]
     private GameObject quitButton = null;
+    [SerializeField]
+    private GameObject twoFloor = null;
+    [SerializeField]
+    private GameObject threeFloor = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
@@ -32,12 +36,27 @@ public class UIManager : MonoBehaviour
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         audioSource = GameObject.Find("Char").GetComponent<AudioSource>();
         panelMove = GetComponent<PanelMove>();
+        twoFloor.SetActive(false);
+        threeFloor.SetActive(false);
         UpdateMoneyPanel();
         CreatePanels();
         StartCoroutine(CartCreate());
     }
 
-    
+    private void Update()
+    {
+        CreateNewFloor();
+    }
+
+    private void CreateNewFloor()
+    {
+        if (GameManager.Instance.CurrentUser.clickMoney >= 5)
+            twoFloor.SetActive(true);
+        if (GameManager.Instance.CurrentUser.clickMoney >= 15)
+            threeFloor.SetActive(true);
+    }
+
+
     public void CreatePanels()
     {
         GameObject panel = null;
