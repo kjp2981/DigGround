@@ -129,7 +129,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(20f);
         while(true)
         {
-            RandomDelay = Random.Range(10f, 20f);
+            RandomDelay = Random.Range(20, 30f);
             if (GameManager.Instance.CartPool.childCount > 0)
             {
                 newCart = GameManager.Instance.CartPool.GetChild(0).gameObject.AddComponent<CartMove>();

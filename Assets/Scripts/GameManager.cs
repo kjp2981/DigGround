@@ -47,7 +47,7 @@ public class GameManager : MonoSingleton<GameManager>
         int count = 0;
         foreach(Place place in user.placeList)
         {
-            user.money += place.ePs * place.amount;
+            user.money += (place.ePs * place.amount);
             if(place.amount != 0)
                 count++;
         }

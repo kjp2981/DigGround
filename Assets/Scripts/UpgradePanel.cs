@@ -14,9 +14,22 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField]
     private Button purchaseButton = null;
     [SerializeField]
+    private Text purchaseButtonText = null;
+    [SerializeField]
     private Sprite[] placeSprite = null;
 
     private Place place = null;
+
+    private Image panelImage = null;
+
+    private void Start()
+    {
+        panelImage = GetComponent<Image>();
+    }
+    private void Update()
+    {
+        Effect();
+    }
     public void UpdateUI()
     {
         placeImage.sprite = placeSprite[place.placeNumber];
@@ -39,5 +52,29 @@ public class UpgradePanel : MonoBehaviour
         place.price = (long)(Mathf.Pow(place.amount,2)+place.price*1.3);
         UpdateUI();
         GameManager.Instance.uiManager.UpdateMoneyPanel();
+    }
+
+    private void Effect()
+    {
+        if (GameManager.Instance.CurrentUser.money < place.price)
+        {
+            placeImage.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            placeNameText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            priceText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            amountText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            panelImage.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            purchaseButton.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
+            purchaseButtonText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+        }
+        else
+        {
+            placeImage.color = new Color(1, 1, 1, 1);
+            placeNameText.color = new Color(1, 1, 1, 1);
+            priceText.color = new Color(1, 1, 1, 1);
+            amountText.color = new Color(1, 1, 1, 1);
+            panelImage.color = new Color(1, 1, 1, 1);
+            purchaseButton.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            purchaseButtonText.color = new Color(1, 1, 1, 1);
+        }
     }
 }

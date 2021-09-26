@@ -36,9 +36,9 @@ public class CartMove : MonoBehaviour
         {
             result += (place.ePs * place.amount);
         }
-        result = result * 3;
+        result *= 3;
         if (result == 0)
-            result += 6;
+            result += 10;
         GameManager.Instance.CurrentUser.money += result;
         GameManager.Instance.uiManager.textPool(result);
         GameManager.Instance.uiManager.UpdateMoneyPanel();
