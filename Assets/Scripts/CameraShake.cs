@@ -20,6 +20,7 @@ public class CameraShake : MonoBehaviour
 
             timer += Time.deltaTime;
             yield return null;
+            InfiniteLoopDetector.Run();
         }
         transform.localPosition = originPos;
 

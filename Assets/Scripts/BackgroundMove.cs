@@ -14,7 +14,6 @@ public class BackgroundMove : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         offset.x += speed * Time.deltaTime;
