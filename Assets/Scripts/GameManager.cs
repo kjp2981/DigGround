@@ -34,6 +34,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             Directory.CreateDirectory(SAVE_PATH);
         }
+        print(SAVE_PATH);
 
         LoadFromJson();
         uiManager = GetComponent<UIManager>();
