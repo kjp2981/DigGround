@@ -29,12 +29,14 @@ public class UIManager : MonoBehaviour
 
     private CameraShake cameraShake = null;
     private PanelMove panelMove = null;
+    private SoilMove soilMove = null;
 
     private AudioSource audioSource = null;
     private void Start()
     {
         cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         audioSource = GameObject.Find("Char").GetComponent<AudioSource>();
+        soilMove = GameObject.Find("Background_1 (1)").GetComponent<SoilMove>();
         panelMove = GetComponent<PanelMove>();
         twoFloor.SetActive(false);
         threeFloor.SetActive(false);
@@ -76,6 +78,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.CurrentUser.money += (long)(GameManager.Instance.CurrentUser.clickMoney);
         animator.Play("Click");
+        soilMove.Move();
         audioSource.Play();
         ParticlePool();
         StartCoroutine(cameraShake.Shake(0.05f, 0.1f));

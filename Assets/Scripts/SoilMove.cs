@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SoilMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private float speed = 0f;
+
+    private Vector2 offset = Vector2.zero;
+    private MeshRenderer meshRenderer = null;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     public void Move()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector2(transform.position.x, transform.position.y - 10));
+        offset.x += speed * Time.deltaTime;
+        meshRenderer.material.SetTextureOffset("_MainTex", offset);
     }
 }
