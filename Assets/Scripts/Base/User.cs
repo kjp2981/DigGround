@@ -28,4 +28,17 @@ public class User
             return result;
         }
     }
+
+    public float TotalExp
+    {
+        get
+        {
+            float result = 0f;
+            foreach(Place place in placeList)
+            {
+                result += (place.ePs * place.amount);
+            }
+            return result;
+        }
+    }
 }

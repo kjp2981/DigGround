@@ -17,6 +17,8 @@ public class UpgradePanel : MonoBehaviour
     private Text purchaseButtonText = null;
     [SerializeField]
     private Sprite[] placeSprite = null;
+    [SerializeField]
+    private Text ePsText = null;
 
     private Place place = null;
 
@@ -36,6 +38,7 @@ public class UpgradePanel : MonoBehaviour
         placeNameText.text = place.name;
         priceText.text = string.Format("{0}", place.price);
         amountText.text = string.Format("{0}", place.amount);
+        ePsText.text = string.Format("{0}/s", place.ePs/* * place.amount*/);
     }
     public void SetValue(Place place)
     {
@@ -65,6 +68,7 @@ public class UpgradePanel : MonoBehaviour
             panelImage.color = new Color(0.5f, 0.5f, 0.5f, 1);
             purchaseButton.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
             purchaseButtonText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            ePsText.color = new Color(0.5f, 0.5f, 0.5f, 1);
         }
         else
         {
@@ -75,6 +79,7 @@ public class UpgradePanel : MonoBehaviour
             panelImage.color = new Color(1, 1, 1, 1);
             purchaseButton.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             purchaseButtonText.color = new Color(1, 1, 1, 1);
+            ePsText.color = new Color(1, 1, 1, 1);
         }
     }
 }

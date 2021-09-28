@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text moneyText = null;
     [SerializeField]
+    private Text mPsText = null;
+    [SerializeField]
     private Animator animator = null;
     [SerializeField]
     private UpgradePanel upgradePanelTemplate = null;
@@ -105,6 +107,7 @@ public class UIManager : MonoBehaviour
     {
         moneyText.text = string.Format("{0} MONEY", GameManager.Instance.CurrentUser.money);
         moneyText.transform.DOScale(1.2f, 0.1f).OnComplete(() => moneyText.transform.DOScale(1f, 0.1f));
+        mPsText.text = string.Format("{0} exp/s", GameManager.Instance.CurrentUser.TotalExp);
     }
 
     private void ParticlePool()

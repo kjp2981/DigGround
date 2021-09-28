@@ -18,7 +18,7 @@ public class EnergyText : MonoBehaviour
         energyText.DOFade(0f, 0.5f).OnComplete(() => Despawn());
         RectTransform rectTransform = GetComponent<RectTransform>();
         float targetPositionY = rectTransform.anchoredPosition.y + 150f;
-        rectTransform.DOAnchorPosY(targetPositionY, 0.5f);
+        rectTransform.DOAnchorPosY(targetPositionY, 0.3f);
     }
     
     private void Despawn()
