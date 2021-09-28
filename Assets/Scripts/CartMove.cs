@@ -21,7 +21,7 @@ public class CartMove : MonoBehaviour
 
     private IEnumerator Move()
     {
-        transform.DOMoveX(-1f, 2);
+        transform.DOMoveX(-.25f, 2);
         yield return new WaitForSeconds(5f);
         transform.DOMoveX(-3.5f, 2);
         yield return new WaitForSeconds(2f);

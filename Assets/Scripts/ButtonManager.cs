@@ -18,6 +18,11 @@ public class ButtonManager : MonoBehaviour
     }
     public void StartButton()
     {
+        SceneManager.LoadScene("Animation");
+    }
+
+    public void SkipButton()
+    {
         SceneManager.LoadScene("Main");
     }
 
