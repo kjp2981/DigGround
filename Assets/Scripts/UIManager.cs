@@ -105,9 +105,9 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateMoneyPanel()
     {
-        moneyText.text = string.Format("{0} MONEY", GameManager.Instance.CurrentUser.money);
+        moneyText.text = string.Format("{0:N0} MONEY", GameManager.Instance.CurrentUser.money);
         moneyText.transform.DOScale(1.2f, 0.1f).OnComplete(() => moneyText.transform.DOScale(1f, 0.1f));
-        mPsText.text = string.Format("{0} exp/s", GameManager.Instance.CurrentUser.TotalExp);
+        mPsText.text = string.Format("{0} Money/s", GameManager.Instance.CurrentUser.TotalExp);
     }
 
     private void ParticlePool()
