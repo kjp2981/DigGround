@@ -10,8 +10,11 @@ public class User
     {
         get
         {
-            //return (long)(1f > Math.Round(TotalMoney * 0.01f) ? 1f : Math.Round(TotalMoney * 0.05f));
-            return (long)(1f > Math.Round(Math.Pow(TotalAmount, 0.5f)-1) ? 1f : Math.Round(Math.Pow(TotalAmount, 0.5f) - 1));
+            long result = (long)(1f > Math.Round(Math.Pow(TotalAmount, 0.5f) - 1) ? 1f : Math.Round(Math.Pow(TotalAmount, 0.5f) - 1));
+            if (TotalAmount == 0)
+                return 1;
+            else
+                return result * 2;
         }
     }
     public List<Place> placeList = new List<Place>();

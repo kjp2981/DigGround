@@ -29,16 +29,16 @@ public class UIManager : MonoBehaviour
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
+    [SerializeField]
     private CameraShake cameraShake = null;
     private PanelMove panelMove = null;
+    [SerializeField]
     private SoilMove soilMove = null;
 
+    [SerializeField]
     private AudioSource audioSource = null;
     private void Start()
     {
-        cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
-        audioSource = GameObject.Find("Char").GetComponent<AudioSource>();
-        soilMove = GameObject.Find("Background_1 (1)").GetComponent<SoilMove>();
         panelMove = GetComponent<PanelMove>();
         twoFloor.SetActive(false);
         threeFloor.SetActive(false);
@@ -54,9 +54,9 @@ public class UIManager : MonoBehaviour
 
     private void CreateNewFloor()
     {
-        if (GameManager.Instance.CurrentUser.clickMoney >= 5)
+        if (GameManager.Instance.CurrentUser.clickMoney >= 10)
             twoFloor.SetActive(true);
-        if (GameManager.Instance.CurrentUser.clickMoney >= 15)
+        if (GameManager.Instance.CurrentUser.clickMoney >= 20)
             threeFloor.SetActive(true);
     }
 

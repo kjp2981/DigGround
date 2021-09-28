@@ -61,19 +61,19 @@ public class UpgradePanel : MonoBehaviour
     {
         if (GameManager.Instance.CurrentUser.money < place.price)
         {
-            placeImage.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            placeNameText.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            priceText.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            amountText.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            panelImage.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            purchaseButton.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
-            purchaseButtonText.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            ePsText.color = new Color(0.5f, 0.5f, 0.5f, 1);
+            placeImage.color = new Color(.5f, .5f, .5f, 1);
+            placeNameText.color = new Color(.5f, .25f, 0f, 1);
+            priceText.color = new Color(.5f, .5f, 0.5f, 1);
+            amountText.color = new Color(.5f, .5f, .5f, 1);
+            panelImage.color = new Color(.5f, .5f, .5f, 1);
+            purchaseButton.GetComponent<Image>().color = new Color(.5f, .5f, .5f, 1);
+            purchaseButtonText.color = new Color(.5f, .5f, .5f, 1);
+            ePsText.color = new Color(.5f, .5f, .5f, 1);
         }
         else
         {
             placeImage.color = new Color(1, 1, 1, 1);
-            placeNameText.color = new Color(1, 1, 1, 1);
+            placeNameText.color = new Color(1, .5f, 0, 1);
             priceText.color = new Color(1, 1, 1, 1);
             amountText.color = new Color(1, 1, 1, 1);
             panelImage.color = new Color(1, 1, 1, 1);
