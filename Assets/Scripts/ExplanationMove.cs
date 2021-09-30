@@ -10,18 +10,23 @@ public class ExplanationMove : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        //Move();
+        StartCoroutine(Move());
     }
 
     private void Update()
     {
-        Move();
+
     }
 
     private IEnumerator Move()
     {
-        rectTransform.DOMoveX(-8, 5f);
-        yield return new WaitForSeconds(5f);
-        rectTransform.anchoredPosition = new Vector2(1484, 925);
+        while (true)
+        {
+            rectTransform.DOMoveX(-8, 6f);
+            yield return new WaitForSeconds(6f);
+            rectTransform.anchoredPosition = new Vector2(1800, 925);
+            yield return new WaitForSeconds(10f);
+            InfiniteLoopDetector.Run();
+        }
     }
 }

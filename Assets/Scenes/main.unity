@@ -8391,8 +8391,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: 1632}
-  m_SizeDelta: {x: 1400, y: 100}
+  m_AnchoredPosition: {x: 1800, y: 927}
+  m_SizeDelta: {x: 1800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159292010
 MonoBehaviour:
@@ -8408,7 +8408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8427,7 +8427,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAC00\uB054\uC529 \uB098\uC624\uB294 \uCE74\uD2B8\uB97C \uD074\uB9AD\uD574\uBCF4\uC138\uC694."
+  m_Text: "\uAC00\uB054\uC529 \uB098\uC624\uB294 \uB9E8 \uC704\uCE35\uC758 \uCE74\uD2B8\uB97C
+    \uD074\uB9AD\uD574\uBCF4\uC138\uC694."
 --- !u!114 &1159292011
 MonoBehaviour:
   m_ObjectHideFlags: 0
