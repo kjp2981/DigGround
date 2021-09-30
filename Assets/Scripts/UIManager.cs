@@ -26,6 +26,12 @@ public class UIManager : MonoBehaviour
     private GameObject twoFloor = null;
     [SerializeField]
     private GameObject threeFloor = null;
+    [SerializeField]
+    private GameObject monsterCanvas = null;
+    [SerializeField]
+    private Image fever = null;
+    [SerializeField]
+    private Animator feverAnimator = null;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
 
@@ -45,6 +51,7 @@ public class UIManager : MonoBehaviour
         UpdateMoneyPanel();
         CreatePanels();
         StartCoroutine(CartCreate());
+        //StartCoroutine(Monster());
     }
 
     private void Update()
@@ -152,6 +159,24 @@ public class UIManager : MonoBehaviour
             newCart.gameObject.SetActive(true);
             yield return new WaitForSeconds(RandomDelay);
             InfiniteLoopDetector.Run();
+        }
+    }
+
+    private IEnumerator Monster()
+    {
+        float RandomDelay = 0f;
+        while (true)
+        {
+            yield return new WaitForSeconds(10);
+            RandomDelay = Random.Range(10, 20);
+            InfiniteLoopDetector.Run();
+            fever.gameObject.SetActive(true);
+            feverAnimator.Play("Fever");
+            yield return new WaitForSeconds(3f);
+            fever.gameObject.SetActive(false);
+            //if (monsterCanvas.activeSelf == true) continue;
+            monsterCanvas.SetActive(true);
+            yield return new WaitForSeconds(RandomDelay);
         }
     }
 }
