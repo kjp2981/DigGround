@@ -7,8 +7,6 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject backmenu = null;
-    [SerializeField]
-    private GameObject monsterCanvas = null;
     private void Start()
     {
         Screen.SetResolution(1440, 2960, true);
@@ -44,10 +42,5 @@ public class ButtonManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void ActiveFalseCanvas()
-    {
-        monsterCanvas.SetActive(false);
     }
 }

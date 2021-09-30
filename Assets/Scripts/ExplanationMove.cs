@@ -18,19 +18,14 @@ public class ExplanationMove : MonoBehaviour
         StartCoroutine(Move());
     }
 
-    private void Update()
-    {
-
-    }
-
     private IEnumerator Move()
     {
         while (true)
         {
-            rectTransform.DOMoveX(-8, 6f);
+            rectTransform.DOMoveX(-8, 10);
             yield return new WaitForSeconds(6f);
             rectTransform.anchoredPosition = new Vector2(2000, 898);
-            text.text = string.Format("{0}", explanations[Random.Range(0, 3)]);
+            text.text = string.Format("{0}", explanations[Random.Range(0, explanations.Length)]);
             yield return new WaitForSeconds(10f);
             InfiniteLoopDetector.Run();
         }
