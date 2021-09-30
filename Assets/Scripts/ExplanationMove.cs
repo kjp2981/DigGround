@@ -7,9 +7,14 @@ using DG.Tweening;
 public class ExplanationMove : MonoBehaviour
 {
     private RectTransform rectTransform = null;
+    private Text text = null;
+
+    [SerializeField]
+    private string[] explanations = { "가끔씩 나오는 맨 위층의 카트를 클릭해보세요.", "계속 플레이하다보면 아래층이 열려요.", "이 게임이 재미있길 빌게요." };
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        text = GetComponent<Text>();
         StartCoroutine(Move());
     }
 
@@ -24,7 +29,8 @@ public class ExplanationMove : MonoBehaviour
         {
             rectTransform.DOMoveX(-8, 6f);
             yield return new WaitForSeconds(6f);
-            rectTransform.anchoredPosition = new Vector2(1800, 925);
+            rectTransform.anchoredPosition = new Vector2(2000, 898);
+            text.text = string.Format("{0}", explanations[Random.Range(0, 3)]);
             yield return new WaitForSeconds(10f);
             InfiniteLoopDetector.Run();
         }
