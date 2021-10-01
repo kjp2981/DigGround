@@ -22,10 +22,12 @@ public class ExplanationMove : MonoBehaviour
     {
         while (true)
         {
-            rectTransform.DOMoveX(-8, 10);
-            yield return new WaitForSeconds(6f);
-            rectTransform.anchoredPosition = new Vector2(2000, 898);
-            text.text = string.Format("{0}", explanations[Random.Range(0, explanations.Length)]);
+            yield return new WaitForSeconds(1f);
+            rectTransform.DOMoveX(-8, 10).OnComplete(() =>
+            {
+                rectTransform.anchoredPosition = new Vector2(2000, 898);
+                text.text = string.Format("{0}", explanations[Random.Range(0, explanations.Length)]);
+            });
             yield return new WaitForSeconds(10f);
             InfiniteLoopDetector.Run();
         }
