@@ -28,6 +28,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Awake()
     {
+        GetPool();
+
         SAVE_PATH = Application.persistentDataPath + "/Save";
         //SAVE_PATH = Application.dataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
@@ -41,6 +43,17 @@ public class GameManager : MonoSingleton<GameManager>
 
         InvokeRepeating("SaveToJson", 1f, 60f);
         InvokeRepeating("EarnMoneyPerSecond", 0f, 1f);
+    }
+    private void Update()
+    {
+        GetPool();
+    }
+
+    private void GetPool()
+    {
+        textPool = GameObject.Find("TextPool").transform;
+        particlePool = GameObject.Find("CoinPool").transform;
+        cartPool = GameObject.Find("CartPool").transform;
     }
 
     public void EarnMoneyPerSecond()
